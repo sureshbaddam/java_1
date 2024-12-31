@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>greter than number</h2>
+        <div class="compare">
+            <input type="number" id="num1" placeholder="Enter first number" />
+            <input type="number" id="num2" placeholder="Enter second number" />
+            <button onclick="fun1()">Compare</button>
+            <div class="ans">
+                <span>Ans:</span>
+                <span id="result"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Positive or Negitive</h2>
+        <div class="compare">
+            <input type="number" id="num3" placeholder="Enternumber" />
+
+            <button onclick="number()">submit</button>
+
+            <div class="ans">
+                <span>Ans:</span>
+                <span id="result1"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Count Positive and Negative Numbers</h2>
+        <div class="compare">
+            <input type="text" id="numbersInput" placeholder="e.g., 1,-3,4,-2,0,7,-6,9" />
+            <button onclick="countNumbers()">Count</button>
+
+            <div class="ans">
+                <span>Ans:</span>
+                <span id="result2"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>odd and even numbers</h2>
+
+        <p id="result3"></p>
+    </div>
+
+    <div class="student-container">
+        <div class="inputs">
+            <input type="number" id="mar1" placeholder="Enter marks" />
+            <input type="number" id="mar2" placeholder="Enter marks" />
+            <input type="number" id="mar3" placeholder="Enter marks" />
+            <input type="number" id="mar4" placeholder="Enter marks" />
+            <input type="number" id="mar5" placeholder="Enter marks" />
+            <button type="submit" onclick="students()">submit</button>
+        </div>
+        <div class="results">
+            <span>student1: <span class="student-result" id="mark1"></span></span>
+            <span>student2: <span class="student-result" id="mark2"></span></span>
+            <span>student3: <span class="student-result" id="mark3"></span></span>
+            <span>student4: <span class="student-result" id="mark4"></span></span>
+            <span>student5: <span class="student-result" id="mark5"></span></span>
+            <span id="total">avg:
+                <span class="totals" id="average"></span>
+            </span>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        function fun1() {
+            const a = parseFloat(document.getElementById("num1").value);
+            const b = parseFloat(document.getElementById("num2").value);
+
+            if (a > b) {
+                result = `${a} is greater than ${b} <br>`;
+            } else if (a < b) {
+                result = `${b} is greater than ${a} <br>`;
+            } else {
+                result = `${a} is equal to ${b} <br>`;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function number() {
+            const x = parseFloat(document.getElementById("num3").value);
+
+            if (x > 0) {
+                result1 = "Positive";
+            } else if (x < 0) {
+                result1 = "Negative";
+            } else {
+                result1 = "Zero";
+            }
+            document.getElementById("result1").innerHTML = result1;
+        }
+
+        function countNumbers() {
+            const inputString = document.getElementById("numbersInput").value;
+            const numbersArray = inputString.split(",").map(Number);
+
+            let positiveCount = 0;
+            let negativeCount = 0;
+
+            numbersArray.forEach((number) => {
+                if (number > 0) {
+                    positiveCount++;
+                } else if (number < 0) {
+                    negativeCount++;
+                }
+            });
+
+            document.getElementById(
+                "result2"
+            ).innerHTML = `Positive: ${positiveCount}<br>Negative: ${negativeCount}`;
+        }
+
+        let evenorodd = "";
+        for (let i = 0; i <= 15; i++) {
+            if (i === 0) {
+                evenorodd += `<br>${i}: Neither odd nor even`;
+            } else if (i % 2 === 0) {
+                evenorodd += `<br>${i}: Even`;
+            } else {
+                evenorodd += `<br>${i}: Odd`;
+            }
+        }
+
+        document.getElementById("result3").innerHTML = evenorodd;
+
+        function students() {
+            const a = parseFloat(document.getElementById("mar1").value);
+            const b = parseFloat(document.getElementById("mar2").value);
+            const c = parseFloat(document.getElementById("mar3").value);
+            const d = parseFloat(document.getElementById("mar4").value);
+            const e = parseFloat(document.getElementById("mar5").value);
+
+            let avg = (a + b + c + d + e) / 5;
+            document.getElementById("average").textContent = avg;
+            document.getElementById("mark1").textContent = a;
+            document.getElementById("mark2").textContent = b;
+            document.getElementById("mark3").textContent = c;
+            document.getElementById("mark4").textContent = d;
+            document.getElementById("mark5").textContent = e;
+        }
+    </script>
+</body>
+
+</html>

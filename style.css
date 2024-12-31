@@ -1,0 +1,119 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+h2 {
+  text-align: center;
+}
+.container {
+  box-shadow: 0 1px 4px 0;
+  width: 30%;
+  height: 40vh;
+  margin-top: 2em;
+  display: block;
+  position: relative;
+}
+.compare {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+}
+input {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  width: 60%;
+  margin: auto;
+  height: 2.5em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #45a049;
+}
+span {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#result {
+  font-size: 20px;
+  color: #080808;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.ans {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  left: 10px;
+  bottom: 20px;
+}
+
+#result3 {
+  display: flex; /* Using flexbox to split the content */
+  flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+  justify-content: space-between; /* Distribute space between columns */
+  width: 80%; /* Set the width of the container */
+  margin: 20px auto;
+  padding: 20px;
+
+  border-radius: 10px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+
+  height: 150px; /* Fixed height for scrolling */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.student-container {
+  display: flex;
+  width: 40%;
+  box-shadow: 0 1px 4px 0;
+  gap: 5em;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+.inputs button {
+  font-size: 1.2em;
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.results span {
+  font-size: 1em;
+  color: rgb(199, 21, 45);
+}
+
+#total {
+  font-size: 1.5em;
+  color: rgb(138, 65, 207);
+}
+.results .student-result {
+  color: rgb(16, 220, 16);
+}
+
+.results .totals {
+  color: orangered;
+}
